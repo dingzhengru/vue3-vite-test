@@ -15,13 +15,19 @@
 
   <h2>watch (user)</h2>
   <span>change count: {{ watchUserChangeCount }}</span>
+
+  <h2>Components</h2>
+  <AppButton :text="appButtonText" @get-count="appButtonCountHandler" />
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import { ref, reactive, readonly, isProxy, isReactive, isReadonly, toRaw, computed, watch, onMounted } from 'vue';
+import AppButton from '/@/components/AppButton.vue';
+
 export default {
   name: 'Home',
+  components: { AppButton },
   computed: {
     ...mapGetters(['count']),
   },
@@ -73,6 +79,12 @@ export default {
       console.log('onMounted!!');
     });
 
+    //* components
+    const appButtonText = ref('AppButton');
+    const appButtonCountHandler = count => {
+      console.log(count);
+    };
+
     return {
       name,
       user,
@@ -81,6 +93,8 @@ export default {
       num2,
       sum,
       watchUserChangeCount,
+      appButtonText,
+      appButtonCountHandler,
     };
   },
 };
