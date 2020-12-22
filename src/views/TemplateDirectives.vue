@@ -53,7 +53,7 @@ import AppVModelTest from '/@/components/AppVModelTest.vue';
 import AppVModelMultiTest from '/@/components/AppVModelMultiTest.vue';
 
 export default {
-  name: 'Home',
+  name: 'TemplateDirectives',
   components: { AppVModelTest, AppVModelMultiTest },
   setup() {
     const pageTitle = ref('v-model test');
