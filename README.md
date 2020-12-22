@@ -2,7 +2,7 @@
 
 測試 vue 3 的功能、測試 vite
 
-vite ceate project
+vite create project
 
 ```
 npm init vite-app <project-name>
